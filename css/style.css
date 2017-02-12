@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+/*
+    width: 100%;
+    height: 100vh;
+*/
+    background-color: #EDE7F6;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 1065px !important;
+    height: 933px !important;
+}
+
+
+
+/* Z-index-rules */
+
+.z1 {
+    z-index: 1;
+}
+
+.z2 {
+    z-index: 2;
+}
+.z3 {
+    z-index: 3;
+}
+.z4 {
+    z-index: 4;
+}
+.z5 {
+    z-index: 5;
+}
+.z6 {
+    z-index: 6;
+}
+.z7 {
+    z-index: 7;
+}
+.z8 {
+    z-index: 8;
+}
+.z9 {
+    z-index: 9;
+}
+.z10 {
+    z-index: 10;
+}
+.z11 {
+    z-index: 11;
+}
+.z12 {
+    z-index: 12;
+}
+.z13 {
+    z-index: 13;
+}
+.z14 {
+    z-index: 14;
+}
+.z15 {
+    z-index: 15;
+}
