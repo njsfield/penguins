@@ -2,7 +2,7 @@
 var xStep = 15.7;
 var yStep = 34.5;
 var steptime = 1;
-var masterTimeScale = 1;
+var masterTimeScale = 1.8;
 
 // Bezier Points
 var bezPoints =
@@ -31,12 +31,12 @@ var escalatorLoop = TweenMax.to("#steps", steptime, {x: "-=45", y: "-=100", ease
 // Penguin Sequence
 function penguinTl (col, prog, timescale) {
     var tl = new TimelineMax({repeat: -1});
-        tl.timeScale(timescale);
+        tl.timeScale(timescale * 0.5);
 
     tl.set("#"+col+"-back-look-left", {display: "inline-block"})
 
     for (var i = 0; i < 12; i++ ){
-        tl.to("#"+col, steptime, {x: "-="+ xStep, y: "-="+ yStep, ease: Bounce.Out}, "penguinstep" + i);
+        tl.to("#"+col, steptime * 0.5, {x: "-="+ xStep, y: "-="+ yStep, ease: Bounce.Out}, "penguinstep" + i);
     }
 
     tl.set("#"+col, {zIndex: 8})
@@ -88,8 +88,7 @@ function penguinTl (col, prog, timescale) {
       .set("#"+col+"-look-left", hideIt, "fromtop+=4.2")
       .set("#"+col+"-back-look-left", showIt, "fromtop+=4.2")
 
-      .set("#"+col, {zIndex: 8}, "fromtop+=5.2")
-      .set("#"+col, {zIndex: 8}, "fromtop+=6")
+      .set("#"+col, {zIndex: 8}, "fromtop+=5.3")
 
     tl.seek(prog);
 
@@ -101,7 +100,7 @@ function penguinTl (col, prog, timescale) {
 var masterTl = new TimelineMax({paused: true});
     masterTl.set(".container", {opacity: 0});
     masterTl.add(penguinTl.bind(null, "blue", 2, masterTimeScale), "blue")
-    masterTl.add(penguinTl.bind(null, "red", 5, masterTimeScale), "red")
+    masterTl.add(penguinTl.bind(null, "red", 12, masterTimeScale), "red")
     masterTl.add(penguinTl.bind(null, "black", 28, masterTimeScale), "black")
     masterTl.add(escalatorLoop)
     masterTl.to(".container", 3, {opacity: 1}, .5);
