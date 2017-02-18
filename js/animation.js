@@ -24,7 +24,12 @@ var showIt = {display: "inline-block"};
 
 
 // Escalator Loop
-var escalatorLoop = TweenMax.to("#steps", steptime, {x: "-=45", y: "-=100", ease: Bounce.Out, repeat: -1})
+function escalatorLoop(timescale) {
+  var tl = new TimelineMax({repeat: -1});
+      tl.timeScale(timescale);
+      tl.to("#steps", steptime, {x: "-=45", y: "-=100", ease: Bounce.Out}, 0)
+  return tl;
+}
 
 
 
@@ -102,10 +107,11 @@ var masterTl = new TimelineMax({paused: true});
     masterTl.add(penguinTl.bind(null, "blue", 2, masterTimeScale), "blue")
     masterTl.add(penguinTl.bind(null, "red", 12, masterTimeScale), "red")
     masterTl.add(penguinTl.bind(null, "black", 28, masterTimeScale), "black")
-    masterTl.add(escalatorLoop)
+    masterTl.add(escalatorLoop.bind(null, masterTimeScale), "blue")
     masterTl.to(".container", 3, {opacity: 1}, .5);
 
     setTimeout(function(){
+      // masterTl.seek(1);
       masterTl.resume();
     },200);
 
