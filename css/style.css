@@ -28,16 +28,6 @@ img {
     height: 933px !important;
 }
 
-/*#blue {
-  -webkit-filter: blur(1px);
--moz-filter: blur(1px);
--o-filter: blur(1px);
--ms-filter: blur(1px);
-filter: blur(1.5px);
-}*/
-
-
-
 /* Z-index-rules */
 
 .z1 {
@@ -85,4 +75,23 @@ filter: blur(1.5px);
 }
 .z15 {
     z-index: 15;
+}
+
+/* Fix flickers */
+
+.flickerfree {
+   -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
+   backface-visibility: hidden;
+
+   -webkit-perspective: 1000;
+   -moz-perspective: 1000;
+   -ms-perspective: 1000;
+   perspective: 1000;
+
+   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   transform: translateZ(0);
 }

@@ -104,9 +104,9 @@ function penguinTl (col, prog, timescale) {
 // Master
 var masterTl = new TimelineMax({paused: true});
     masterTl.set(".container", {opacity: 0});
-    masterTl.add(penguinTl.bind(null, "blue", 2, masterTimeScale), "blue")
-    masterTl.add(penguinTl.bind(null, "red", 12, masterTimeScale), "red")
-    masterTl.add(penguinTl.bind(null, "black", 28, masterTimeScale), "black")
+    masterTl.add(penguinTl.bind(null, "blue", 1, masterTimeScale), "blue")
+    masterTl.add(penguinTl.bind(null, "red", 11, masterTimeScale), "red")
+    masterTl.add(penguinTl.bind(null, "black", 27, masterTimeScale), "black")
     masterTl.add(escalatorLoop.bind(null, masterTimeScale), "blue")
     masterTl.to(".container", 3, {opacity: 1}, .5);
 
