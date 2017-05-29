@@ -1,5 +1,7 @@
 # Overview
 
+![Penguin Race](./Penguin.png)
+
 An looping SVG animation of three penguins making their way around a penguin slide, inspired by the original toy made popular in the early 90's.
 
 # Technologies
